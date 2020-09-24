@@ -1,9 +1,4 @@
-FROM alpine:3.7
-
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.6/main' >> /etc/apk/repositories && \
-	  apk --no-cache update && \
-	  apk --no-cache add nss python python2-dev python3 python3-dev gcc musl-dev libffi-dev openssl-dev py-pip py-setuptools ca-certificates \
-    curl groff less openjdk8 wget unzip bash=4.3.48-r1 iptables ca-certificates e2fsprogs docker openssh git jq openssl gnupg
+FROM python:3-alpine
 
 ENV AWS_CLI_VERSION=1.16.128 \
 	  AWS_EBCLI_VERSION=3.14.3 \
