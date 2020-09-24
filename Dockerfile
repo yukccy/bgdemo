@@ -2,8 +2,8 @@ FROM alpine:3.7
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.6/main' >> /etc/apk/repositories && \
   apk --no-cache update && \
-  apk --no-cache add nss python python2-dev python3 python3-dev gcc musl-dev libffi-dev openssl-dev py-pip py-setuptools ca-certificates
-curl groff less openjdk8 wget unzip bash=4.3.48-r1 iptables ca-certificates e2fsprogs docker openssh git jq openssl gnupg
+  apk --no-cache add nss python python2-dev python3 python3-dev gcc musl-dev libffi-dev openssl-dev py-pip py-setuptools ca-certificates \
+  curl groff less openjdk8 wget unzip bash=4.3.48-r1 iptables ca-certificates e2fsprogs docker openssh git jq openssl gnupg
 
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
 PATH=$PATH:/usr/lib/jvm/java-1.8-openjdk/bin/
@@ -28,7 +28,7 @@ RUN wget https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRU
   grep vault_${VAULT_VERSION}linux_amd64.zip vault${VAULT_VERSION}SHA256SUMS | sha256sum -c && \
   unzip -d /bin vault${VAULT_VERSION}_linux_amd64.zip && \
   cd /tmp && rm -rf /tmp/build && \
- apk del gnupg && rm -rf /root/.gnupg
+  apk del gnupg && rm -rf /root/.gnupg
 
 RUN pip3 --no-cache-dir install awscli==${AWS_CLI_VERSION} docker-compose==${DOCKER_COMPOSE_VERSION} && \
   pip3 --no-cache-dir install awsebcli==${AWS_EBCLI_VERSION} twine==${TWINE_VERSION} ecs-deploy==${ECS_DEPLOY}
