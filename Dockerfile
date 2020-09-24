@@ -17,7 +17,7 @@ RUN wget https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRU
 	  wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip && \
 	  wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS && \
 	  wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS.sig && \
-	  grep vault_${VAULT_VERSION}linux_amd64.zip vault_${VAULT_VERSION}SHA256SUMS | sha256sum -c && \
+	  grep vault_${VAULT_VERSION}_linux_amd64.zip vault_${VAULT_VERSION}_SHA256SUMS | sha256sum -c && \
 	  unzip -d /bin vault_${VAULT_VERSION}_linux_amd64.zip && \
 	  cd /tmp && rm -rf /tmp/build && \
 	  apk del gnupg && rm -rf /root/.gnupg
