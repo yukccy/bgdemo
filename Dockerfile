@@ -5,14 +5,14 @@ RUN rm -rf /var/cache/apk/* && \
     rm -rf /tmp/*
 RUN apk update
 
-ENV AWS_CLI_VERSION=1.16.128 \
-	  AWS_EBCLI_VERSION=3.14.3 \
-	  DOCKER_COMPOSE_VERSION=1.22.0 \
-	  TERRAFORM_VERSION=0.11.13 \
-	  VAULT_VERSION=0.10.4 \
-	  TERRAGRUNT_VERSION=v0.18.2 \
-	  TWINE_VERSION=1.11.0 \
-	  ECS_DEPLOY=1.4.3
+ENV AWS_CLI_VERSION=1.18.40 \
+    AWS_EBCLI_VERSION=3.14.3 \
+    DOCKER_COMPOSE_VERSION=1.22.0 \
+    TERRAFORM_VERSION=0.12.24 \
+    VAULT_VERSION=0.10.4 \
+    TERRAGRUNT_VERSION=v0.21.12 \
+    TWINE_VERSION=1.11.0 \
+    ECS_DEPLOY=1.4.3
 
 RUN wget https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRUNT_VERSION}/terragrunt_linux_amd64 && \
 	  chmod 755 terragrunt_linux_amd64 && \
