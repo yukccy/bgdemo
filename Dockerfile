@@ -23,9 +23,7 @@ RUN wget https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRU
 	  wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS && \
 	  wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS.sig && \
 	  grep vault_${VAULT_VERSION}_linux_amd64.zip vault_${VAULT_VERSION}_SHA256SUMS | sha256sum -c && \
-	  unzip -d /bin vault_${VAULT_VERSION}_linux_amd64.zip && \
-	  cd /tmp && rm -rf /tmp/build && \
-	  apk del gnupg && rm -rf /root/.gnupg
+	  unzip -d /bin vault_${VAULT_VERSION}_linux_amd64.zip
 
 RUN pip3 --no-cache-dir install awscli==${AWS_CLI_VERSION} docker-compose==${DOCKER_COMPOSE_VERSION} && \
 	  pip3 --no-cache-dir install awsebcli==${AWS_EBCLI_VERSION} twine==${TWINE_VERSION} ecs-deploy==${ECS_DEPLOY}
