@@ -8,7 +8,6 @@ RUN pip3 install --upgrade pip
 RUN apk add openrc
 RUN apk add docker
 RUN rc-update add docker boot
-RUN service docker start
 RUN apk add docker-compose
 
 ENV AWS_CLI_VERSION=1.18.40 \
