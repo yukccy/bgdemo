@@ -6,7 +6,6 @@ RUN rm -rf /var/cache/apk/* && \
 RUN apk update
 RUN pip3 install --upgrade pip
 RUN apk add docker
-RUN addgroup username docker
 RUN rc-update add docker boot
 RUN service docker start
 RUN apk add docker-compose
