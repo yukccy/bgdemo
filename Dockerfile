@@ -5,10 +5,6 @@ RUN rm -rf /var/cache/apk/* && \
     rm -rf /tmp/*
 RUN apk update
 RUN pip3 install --upgrade pip
-RUN apk add openrc
-RUN apk add docker
-RUN rc-update add docker boot
-RUN apk add docker-compose
 
 ENV AWS_CLI_VERSION=1.18.40 \
     DOCKER_COMPOSE_VERSION=1.22.0
