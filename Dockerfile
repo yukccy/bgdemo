@@ -10,6 +10,8 @@ RUN apk add --no-cache \
  openssl-dev \
  python \
  py-pip \
- python-dev
+ python-dev \
+ python3 py3-pip
 
 RUN pip install docker-compose fabric
+RUN pip3 install awscli
